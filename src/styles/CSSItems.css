@@ -10,16 +10,26 @@ body {
   background-image: url("../images/bg-mobile-light.jpg");
   background-color: hsl(236deg, 33%, 92%);
   background-repeat: no-repeat;
-  width: 100vw;
+  background-position: top;
+  background-size: 110%;
+}
+
+.div-ppal {
+  width: 88%;
+  height: 250px;
+  margin: 20px auto;
+  border-radius: 8px;
+  background-color: hsl(0deg, 0%, 98%);
 }
 
 .cont-item {
   background-color: hsl(0deg, 0%, 98%);
   display: flex;
-  width: 85%;
+  width: 96%;
   padding: 3px 5px;
-  margin: 20px auto;
+  margin: auto;
   border-radius: 8px;
+  border: 0.5px hsl(236deg, 33%, 92%) solid;
   align-items: center;
   justify-content: space-between;
 }
