@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+/* Light Theme */
+/* Dark Theme */
+* {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+  background-image: url("../images/bg-mobile-light.jpg");
+  background-color: hsl(236deg, 33%, 92%);
+  background-repeat: no-repeat;
+  width: 100vw;
+}
+
+.cont-item {
+  background-color: hsl(0deg, 0%, 98%);
+  display: flex;
+  width: 85%;
+  padding: 3px 5px;
+  margin: 20px auto;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+.cont-item__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.cont-item__icon {
+  color: hsl(236deg, 33%, 92%);
+  padding-left: 15px;
+}
+.cont-item__item {
+  color: hsl(237deg, 14%, 26%);
+}
+.cont-item__close {
+  color: hsl(236deg, 33%, 92%);
+  padding-right: 15px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=CSSItems.css.map */
