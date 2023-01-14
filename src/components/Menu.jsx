@@ -7,7 +7,6 @@ const Menu = () => {
         <>
             <MenuContent>
                 <ItemsLeft />
-
                 <button className='btn-clear'>
                     Clear Completed
                 </button>
