@@ -5,4 +5,12 @@
   font-family: "Josefin Sans", sans-serif;
 }
 
+body {
+  background-image: url("../images/bg-mobile-light.jpg");
+  background-color: hsl(236deg, 33%, 92%);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 110%;
+}
+
 /*# sourceMappingURL=CSSgeneral.css.map */
