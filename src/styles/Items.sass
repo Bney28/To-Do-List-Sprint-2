@@ -1,17 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap')
 @import "general.sass"
 
-.div-ppal
-    width: 88%
-    height: 250px
-    margin: 20px auto 0 auto
-    border-radius: 8px
-    background-color: $Very-Light-Gray
-    box-shadow: 10px 10px 110px -37px rgba(0,0,0,0.86)
-    -webkit-box-shadow: 10px 10px 110px -37px rgba(0,0,0,0.86)
-    -moz-box-shadow: 10px 10px 110px -37px rgba(0,0,0,0.86)
-
-
 .cont-item
     background-color: $Very-Light-Gray
     display: flex
@@ -27,11 +16,19 @@
         display: flex
         flex-direction: row
         align-items: center
-        gap: 10px
+        margin: 0 10px
+        text-align: center
+
+    &__container.completed
+        text-decoration: line-through
 
     &__icon
         color: $Very-Light-Grayish-Blue
         padding-left: 15px
+
+    &__icon.completed
+        color: $Bright-Blue
+        /* border: red solid */
 
     &__item
         color: $Very-Dark-Grayish-Blue
@@ -40,4 +37,3 @@
         color: $Very-Light-Grayish-Blue
         padding-right: 15px
         cursor: pointer
-
