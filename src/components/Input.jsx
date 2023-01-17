@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import "../styles/CSSInput.css"
+import "../styles/Input.sass"
 import { v4 as uuidv4 } from 'uuid'  //Generador de Id's
 
 const Input = (props) => {
@@ -7,6 +7,7 @@ const Input = (props) => {
 
     const handleChange = (e) => {    //Función para manejar cambios, manejo de la info
         setInput(e.target.value)
+        console.log(e.target.value);
     }
 
     const handleSend = (e) => {    // Función para manejar el envío del formulario

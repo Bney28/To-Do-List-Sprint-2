@@ -1,18 +1,16 @@
 import React from 'react'
-import "../styles/CSSItems.css"
-
-//Pendiente estilizar clase completed
+import "../styles/Items.sass"
 
 const Items = ({ id, text, completed, toDoRealized, deleteToDo }) => {
 
     return (
         <>
-            <div className={completed ? "cont-item completed" : "cont-item"}> {/* Ternario condicional para completed*/}
+            <div className="cont-item">
+                <i className={completed ? "fa-solid fa-circle-check cont-item__icon completed" :"fa-regular fa-circle-check cont-item__icon"}></i>
                 <div
-                    className="cont-item__container"
+                    className={completed ? "cont-item__container completed" : "cont-item__container"} /* Ternario condicional para completed*/
                     onClick={() => toDoRealized(id)}
                 >
-                    <i class="fa-regular fa-circle-check cont-item__icon"></i>
                     <p className="cont-item__item">
                         {text}
                     </p>

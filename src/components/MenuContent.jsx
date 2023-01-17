@@ -33,11 +33,14 @@ export const Filters = ({ children }) => {
     )
 }
 
-export const FilterButton = ({ filter }) => {
+export const FilterButton = ({ filter, action }) => {
 
     return (
         <>
-            <button className='btns-menu'>
+            <button
+            onClick={action}
+            className='btns-menu'
+            >
                 {filter}
             </button>
 
