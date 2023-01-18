@@ -2,13 +2,13 @@ import React from 'react'
 import { FilterButton, Filters, ItemsLeft, MenuContent } from './MenuContent'
 import "../styles/Menu.sass"
 
-const Menu = ({ total, showAll, showActive, showCompleted, clearCompleted }) => {
+const Menu = ({ menu, total, showAll, showActive, showCompleted, clearCompleted }) => {
     return (
         <>
             <MenuContent>
                 <ItemsLeft total={total} />
                 <button
-                    onClick={clearCompleted}
+                    onClick={() => clearCompleted()}
                     className='btn-clear'
                 >
                     Clear Completed
@@ -16,9 +16,9 @@ const Menu = ({ total, showAll, showActive, showCompleted, clearCompleted }) => 
             </MenuContent>
 
             <Filters>
-                <FilterButton action={() => showAll()} filter="All" />
-                <FilterButton action={() => showActive()} filter="Active" />
-                <FilterButton action={() => showCompleted()} filter="Completed" />
+                <FilterButton action={() => showAll()} filter="All" menu={menu}/>
+                <FilterButton action={() => showActive()} filter="Active" menu={menu} />
+                <FilterButton action={() => showCompleted()} filter="Completed"menu={menu} />
             </Filters>
         </>
     )

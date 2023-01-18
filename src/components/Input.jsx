@@ -7,7 +7,7 @@ const Input = (props) => {
 
     const handleChange = (e) => {    //Función para manejar cambios, manejo de la info
         setInput(e.target.value)
-        console.log(e.target.value);
+        /* console.log(e.target.value); */
     }
 
     const handleSend = (e) => {    // Función para manejar el envío del formulario

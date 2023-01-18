@@ -6,7 +6,7 @@ const Items = ({ id, text, completed, toDoRealized, deleteToDo }) => {
     return (
         <>
             <div className="cont-item">
-                <i className={completed ? "fa-solid fa-circle-check cont-item__icon completed" :"fa-regular fa-circle-check cont-item__icon"}></i>
+                <i className={completed ? "fa-solid fa-circle-check cont-item__icon completed" : "fa-regular fa-circle-check cont-item__icon"}></i>
                 <div
                     className={completed ? "cont-item__container completed" : "cont-item__container"} /* Ternario condicional para completed*/
                     onClick={() => toDoRealized(id)}

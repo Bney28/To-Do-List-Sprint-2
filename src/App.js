@@ -8,7 +8,7 @@ import "./styles/general.sass"
 const App = () => {
   const [tareas, setTareas] = useState([])
   const [menu, setMenu] = useState("all")
-  const [filter, setFilter] = useState (tareas)
+  const [filter, setFilter] = useState(tareas)
 
   //Función para crear nuevas Tareas
   const newToDo = (todo) => {
@@ -17,7 +17,7 @@ const App = () => {
 
       const allToDos = [todo, ...tareas]
       setTareas(allToDos)
-      console.log(allToDos)
+      /* console.log(allToDos) */
     }
   }
 
@@ -29,8 +29,8 @@ const App = () => {
     setTareas(tareas.filter(todo => todo.id !== id)) // Forma abreviada de escribirlo
   }
 
-  const clearCompleted = () =>{
-    const btnClear = tareas.filter(todo => !todo.completed)
+  const clearCompleted = () => {
+    const btnClear = tareas.filter(todo => !todo.completed);
     setMenu(btnClear)
   }
 
@@ -49,15 +49,15 @@ const App = () => {
 
   //Funciones para filtrar las Tareas
 
-  const showAll = () =>{
+  const showAll = () => {
     setMenu("all")
   }
 
-  const showActive = () =>{
+  const showActive = () => {
     setMenu("Active")
   }
 
-  const showCompleted = () =>{
+  const showCompleted = () => {
     setMenu("Completed")
   }
 
@@ -65,14 +65,14 @@ const App = () => {
     if (menu === "all") {
       setFilter(tareas);
     } else if (menu === "active") {
-        const activeToDos = tareas.filter(todo => todo.completed === false);
-        setFilter(activeToDos);
+      const activeToDos = tareas.filter(todo => todo.completed === false);
+      setFilter(activeToDos);
     } else if (menu === 'completed') {
-        const completedToDos = tareas.filter(todo => todo.completed === true);
-        setFilter(completedToDos);
+      const completedToDos = tareas.filter(todo => todo.completed === true);
+      setFilter(completedToDos);
     }
   }, [menu, tareas])
-  
+
 
   return (
     <>
@@ -98,12 +98,13 @@ const App = () => {
           )
         }
         <Menu
-        menu={menu}
-        total={tareas.length}
-        showAll={showAll}
-        showActive={showActive}
-        showCompleted={showCompleted}
-        clearCompleted={clearCompleted}
+          menu={menu}
+          filter={filter}
+          total={tareas.length}
+          showAll={showAll}
+          showActive={showActive}
+          showCompleted={showCompleted}
+          clearCompleted={clearCompleted}
         />
       </div>
     </>
