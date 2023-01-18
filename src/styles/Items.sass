@@ -19,6 +19,9 @@
         margin: 0 10px
         text-align: center
 
+    &__container.dark-mode
+        color: $Very-Light-Gray
+
     &__container.completed
         text-decoration: line-through
 
@@ -32,8 +35,16 @@
 
     &__item
         color: $Very-Dark-Grayish-Blue
+        cursor: pointer
+
+    &__item.dark-mode
+        color: $Very-Light-Gray
 
     &__close
         color: $Very-Light-Grayish-Blue
         padding-right: 15px
         cursor: pointer
+
+.cont-item.dark-mode
+    background-color: $Very-Dark-Grayish-Blue
+    border: 0.5px $Very-Dark-Desaturated-Blue solid

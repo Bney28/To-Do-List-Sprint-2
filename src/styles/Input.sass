@@ -15,7 +15,6 @@
     -webkit-box-shadow: 10px 10px 110px -37px rgba(0,0,0,0.86)
     -moz-box-shadow: 10px 10px 110px -37px rgba(0,0,0,0.86)
 
-
     &__icon
         color: $Very-Light-Grayish-Blue
 
@@ -24,5 +23,11 @@
         width: 80%
         height: 2.5em
         background-color: $Very-Light-Gray
-        /* &:focus
-         border: none */
+
+    &__input.dark-mode
+        background-color: $Very-Dark-Grayish-Blue
+        &:focus
+            color: $Very-Light-Gray
+
+.form.dark-mode
+    background-color: $Very-Dark-Grayish-Blue 
