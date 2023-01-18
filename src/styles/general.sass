@@ -43,6 +43,25 @@ body.dark-mode
     margin: 20px auto 0 auto
     border-radius: 8px
     background-color: $Very-Light-Gray
+    box-shadow: 5px 5px 75px -37px rgba(0,0,0,0.86)
+    -webkit-box-shadow: 5px 5px 75px -37px rgba(0,0,0,0.86)
+    -moz-box-shadow: 5px 5px 75px -37px rgba(0,0,0,0.86)
 
 .div-ppal.dark-mode
     background-color: $Very-Dark-Grayish-Blue
+
+.footer-text
+    width: 40%
+    text-align: center
+    margin: 50px auto
+    color: $Dark-Grayish-Blue
+
+@media screen and (min-width: 1100px)
+    body
+        background-image: url("../images/bg-desktop-light.jpg")
+    
+    body.dark-mode
+        background-image: url("../images/bg-desktop-dark.jpg")
+    
+    .div-ppal
+        width: 550px

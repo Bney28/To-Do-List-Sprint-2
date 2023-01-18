@@ -7,7 +7,7 @@
     width: 99%
     height: 3.5em
     margin: 0 auto
-    background-color: $Very-Light-Gray
+    background-color: transparent
     border-radius: 8px
     justify-content: space-between
     align-items: center
@@ -23,12 +23,9 @@
 .btn-clear
     border: none
     color: $Dark-Grayish-Blue
-    background-color: $Very-Light-Gray
+    background-color: transparent
     font-size: 14px
     margin-right: 12px
-
-.btn-clear.dark-mode
-    background-color: $Very-Dark-Grayish-Blue
 
 .cont-filters
     display: flex
@@ -37,23 +34,27 @@
     width: 99%
     height: 3em
     margin: 5px auto
-    background-color: $Very-Light-Gray
+    background-color: transparent
     border-radius: 8px
-    box-shadow: 10px 10px 110px -37px rgba(0,0,0,0.86)
-    -webkit-box-shadow: 10px 10px 110px -37px rgba(0,0,0,0.86)
-    -moz-box-shadow: 10px 10px 110px -37px rgba(0,0,0,0.86)
-    
-.cont-filters.dark-mode
-    background-color: $Very-Dark-Grayish-Blue
 
 .btns-menu
     border: none
     color: $Dark-Grayish-Blue
-    background-color: $Very-Light-Gray
+    background-color: transparent
     font-size: 14px
     &:focus
         color: $Bright-Blue
         font-weight: 700
 
-.btns-menu.dark-mode
-    background-color: $Very-Dark-Grayish-Blue
+@media screen and (min-width: 1100px)
+    .total
+        font-size: 16px
+    
+    .btn-clear
+        font-size: 16px
+    
+    .btns-menu
+        font-size: 16px
+    
+    .cont-filters
+        gap: 25px

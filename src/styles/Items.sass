@@ -2,7 +2,7 @@
 @import "general.sass"
 
 .cont-item
-    background-color: $Very-Light-Gray
+    background-color: transparent
     display: flex
     width: 96%
     padding: 3px 5px
@@ -18,9 +18,7 @@
         align-items: center
         margin: 0 10px
         text-align: center
-
-    &__container.dark-mode
-        color: $Very-Light-Gray
+        color: $Very-Dark-Grayish-Blue
 
     &__container.completed
         text-decoration: line-through
@@ -31,14 +29,15 @@
 
     &__icon.completed
         color: $Bright-Blue
-        /* border: red solid */
 
     &__item
         color: $Very-Dark-Grayish-Blue
+        background-color: transparent
         cursor: pointer
 
     &__item.dark-mode
         color: $Very-Light-Gray
+        /* border: red 2px solid */
 
     &__close
         color: $Very-Light-Grayish-Blue
@@ -46,5 +45,6 @@
         cursor: pointer
 
 .cont-item.dark-mode
-    background-color: $Very-Dark-Grayish-Blue
     border: 0.5px $Very-Dark-Desaturated-Blue solid
+    border: red 2px solid
+    
