@@ -8,7 +8,7 @@ const Menu = ({ menu, total, showAll, showActive, showCompleted, clearCompleted 
             <MenuContent>
                 <ItemsLeft total={total} />
                 <button
-                    onClick={() => clearCompleted()}
+                    onClick={() => clearCompleted}
                     className='btn-clear'
                 >
                     Clear Completed

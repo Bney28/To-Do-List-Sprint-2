@@ -14,10 +14,7 @@ const App = () => {
   const newToDo = (todo) => {
     if (todo.text.trim()) {
       todo.text = todo.text.trim();
-
-      const allToDos = [todo, ...tareas]
-      setTareas(allToDos)
-      /* console.log(allToDos) */
+      setTareas([...tareas, todo])
     }
   }
 
@@ -32,9 +29,8 @@ const App = () => {
   const clearCompleted = () => {
     const btnClear = tareas.filter(todo => !todo.completed);
     setMenu(btnClear)
-  }
-
   //Función para marcar Tareas Completadas
+  }
 
   const toDoRealized = (id) => {
     const allToDos = tareas.map(todo => {
@@ -44,20 +40,23 @@ const App = () => {
       return todo
     })
     setTareas(allToDos)
-    console.log(allToDos);
+    /* console.log(allToDos); */
   }
 
   //Funciones para filtrar las Tareas
 
   const showAll = () => {
+    console.log("click show all");
     setMenu("all")
   }
 
   const showActive = () => {
+    console.log("click show active");
     setMenu("Active")
   }
 
   const showCompleted = () => {
+    console.log("click show complete");
     setMenu("Completed")
   }
 
@@ -107,8 +106,12 @@ const App = () => {
           clearCompleted={clearCompleted}
         />
       </div>
+      <div className="footer-text">
+        <p>Drag and drop to reorder list</p>
+      </div>
     </>
   );
 }
+
 
 export default App;

@@ -22,6 +22,11 @@ const Input = (props) => {
 
             props.onSubmit(newTodo)
             setInput('')
+            console.log(newTodo);
+
+            /* localStorage.setItem("newToDo",newTodo)
+            const newInput = JSON.parse(localStorage.getItem("newToDo"))
+            console.log(newInput); */
         }
     }
 

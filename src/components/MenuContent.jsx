@@ -33,12 +33,13 @@ export const Filters = ({ children }) => {
     )
 }
 
-export const FilterButton = ({ filter, action }) => {
+export const FilterButton = ({ filter, action, menu }) => {
 
     return (
         <>
             <button
             onClick={action}
+            menu={menu}
             className='btns-menu'
             >
                 {filter}
