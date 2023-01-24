@@ -4,7 +4,7 @@ export const MenuContent = ({ children }) => {
     return (
         <>
             <div className="menu-content">
-            {children}
+                {children}
             </div>
         </>
     )
@@ -35,12 +35,17 @@ export const Filters = ({ children }) => {
 
 export const FilterButton = ({ filter, action, menu }) => {
 
+    const handleClick = () => {
+        action(filter)
+        /* console.log(filter); */
+    }
+
     return (
         <>
             <button
-            onClick={action}
-            menu={menu}
-            className='btns-menu'
+                className='btns-menu'
+                onClick={handleClick}
+                menu={menu}
             >
                 {filter}
             </button>

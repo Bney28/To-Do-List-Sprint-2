@@ -7,8 +7,8 @@ import "./styles/general.sass"
 
 const App = () => {
   const [tareas, setTareas] = useState([])
-  const [menu, setMenu] = useState("all")
-  const [filter, setFilter] = useState(tareas)
+  const [menu, setMenu] = useState("All") /* ActiveFilter */
+  const [filter, setFilter] = useState(tareas) /* FilteredTodos */
 
   //Función para crear nuevas Tareas
   const newToDo = (todo) => {
@@ -20,18 +20,19 @@ const App = () => {
 
   //Función para eliminar Tareas
   const deleteToDo = (id) => {
+    setTareas(tareas.filter(todo => todo.id !== id)) // Forma abreviada de escribirlo
+    /* console.log("click delete one"); */
+    
     /* const allToDos = tareas.filter(todo => todo.id !== id) // Forma tradicional de escribirlo
     setTareas(allToDos) */
-
-    setTareas(tareas.filter(todo => todo.id !== id)) // Forma abreviada de escribirlo
   }
 
   const clearCompleted = () => {
-    const btnClear = tareas.filter(todo => !todo.completed);
-    setMenu(btnClear)
-  //Función para marcar Tareas Completadas
+    setTareas(tareas.filter(todo => !todo.completed))
+    /* console.log("click btn clear"); */
   }
 
+  //Función para marcar Tareas Completadas
   const toDoRealized = (id) => {
     const allToDos = tareas.map(todo => {
       if (todo.id === id) {
@@ -40,35 +41,18 @@ const App = () => {
       return todo
     })
     setTareas(allToDos)
-    /* console.log(allToDos); */
+    console.log(allToDos);
   }
 
-  //Funciones para filtrar las Tareas
-
-  const showAll = () => {
-    console.log("click show all");
-    setMenu("all")
-  }
-
-  const showActive = () => {
-    console.log("click show active");
-    setMenu("Active")
-  }
-
-  const showCompleted = () => {
-    console.log("click show complete");
-    setMenu("Completed")
-  }
+  //UseEffect para filtrar las Tareas
 
   useEffect(() => {
-    if (menu === "all") {
+    if (menu === "All") {
       setFilter(tareas);
-    } else if (menu === "active") {
-      const activeToDos = tareas.filter(todo => todo.completed === false);
-      setFilter(activeToDos);
-    } else if (menu === 'completed') {
-      const completedToDos = tareas.filter(todo => todo.completed === true);
-      setFilter(completedToDos);
+    } else if (menu === "Active") {
+      setFilter(tareas.filter(todo => todo.completed === false));
+    } else if (menu === 'Completed') {
+      setFilter(tareas.filter(todo => todo.completed === true));
     }
   }, [menu, tareas])
 
@@ -79,30 +63,22 @@ const App = () => {
       <Input onSubmit={newToDo} />
       <div className="div-ppal">
         {
-          tareas.map((todo) =>
+          filter.map((todo) =>
             <Items
               key={todo.id}
               id={todo.id}
-              tareas={filter}
-              menu={menu}
               text={todo.text}
               completed={todo.completed}
               deleteToDo={deleteToDo}
               toDoRealized={toDoRealized}
-              showAll={showAll}
-              showActive={showActive}
-              showCompleted={showCompleted}
-              clearCompleted={clearCompleted}
+              /* tareas={filter} */
             />
           )
         }
         <Menu
           menu={menu}
-          filter={filter}
+          setMenu={setMenu}
           total={tareas.length}
-          showAll={showAll}
-          showActive={showActive}
-          showCompleted={showCompleted}
           clearCompleted={clearCompleted}
         />
       </div>
